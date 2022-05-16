@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade11</title>
+</head>
+<body>
+
+    <script>
+        function Retangulo(base, altura){
+            this.base = base;
+            this.altura = altura;
+            this.myresult =  function(){ var result = base * altura;
+            alert(result);}
+        };
+
+         var Meuretangulo = new Retangulo(6,7); 
+         Meuretangulo.myresult();
+
+
+        function Conta(){
+          var NomeCorrentista;
+          this.getNome = function(){ return NomeCorrentista;};
+          this.setNome = function(value){NomeCorrentista = value;};
+          var banco;
+          this.getBanco = function(){ return banco;};
+          this.setBanco = function(value){ banco = value;};
+          var NumConta;
+          this.getNumConta = function(){ return NumConta;};
+          this.setNumConta = function(value){ NumConta = value;};
+          var saldo;
+          this.getSaldo = function(){ return saldo;};
+          this.setSaldo = function(value){ saldo = value;};
+        };
+
+        function ContaCorrente(){
+            var SaldoEspecial;
+            this.getSaldoEspecial = function(){ return SaldoEspecial;};
+            this.setSaldoEspecial = function(value){ SaldoEspecial = value; };
+        };
+
+        function ContaPoupança(){
+          var juros;
+          this.getJuros = function(){ return juros;};
+          this.setJuros = function(value){ juros = value;};
+          var DataVenc;
+          this.getDataVenc = function(){ return DataVenc;};
+          this.setDataVenc = function(value){ DataVenc = value;};
+        };
+        ContaCorrente.prototype = new Conta();
+        ContaPoupança.prototype = new Conta();
+
+        nContaCorrente = new ContaCorrente();
+        nContaPoupança = new ContaPoupança();
+        
+        nContaCorrente.setNome('Eduardo Santana');
+        nContaCorrente.setBanco('Santos');
+        nContaCorrente.setNumConta('1111');
+        nContaCorrente.setSaldo('1343.32');
+        nContaCorrente.setSaldoEspecial('1343.21'); 
+        alert(nContaCorrente.getNome() + '\n' + nContaCorrente.getBanco() +'\n' + nContaCorrente.getNumConta() + '\n' + nContaCorrente.getSaldo() + '\n' + nContaCorrente.getSaldoEspecial());
+
+        nContaPoupança.setNome('Eduardo Santana');
+        nContaPoupança.setBanco('Santos');
+        nContaPoupança.setNumConta('1111');
+        nContaPoupança.setSaldo('1343.32');
+        nContaPoupança.setJuros('1123.43');
+        nContaPoupança.setDataVenc('12/05/2022');
+        alert('\n' +nContaCorrente.getNome() +'\n' + nContaPoupança.getBanco() +'\n' + nContaPoupança.getNumConta() +'\n' + nContaPoupança.getSaldo() +'\n' + nContaPoupança.getJuros() + '\n' + nContaPoupança.getDataVenc());
+
+        </script>
+    
+</body>
+</html>
