@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "msnodesqlv8": "^2.4.8",
+    "mssql": "^8.1.2"
+  }
+}
